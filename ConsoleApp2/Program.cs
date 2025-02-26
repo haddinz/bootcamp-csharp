@@ -22,7 +22,7 @@ cw("Compare between Letters that have good spacing or not");
 
 String letterSpacing = "Good morning everybody";
 
-Boolean result = false;
+Boolean result = true;
 result = letterSpacing.Trim().Replace("  ", " ").Equals(letterSpacing);
 
 cw(result);
