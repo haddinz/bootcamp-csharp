@@ -3,20 +3,24 @@
 using System.Text;
 
 int number = 20;
-StringBuilder sb = new StringBuilder();
+
+List<string> numberTemp = new List<string>();
 
 for (int i = 1; i <= number; i++) {
     if ( i % 15 == 0) {
-        sb.Append("foobar");
+        numberTemp.Add("foobar");
     } else if ( i % 5 == 0) {
-        sb.Append("bar, ");
+        numberTemp.Add("bar");
     } else if (i % 3 == 0) {
-        sb.Append("foo, ");
+        numberTemp.Add("foo");
     } else {
-        sb.Append(i.ToString() + ", ");
+        numberTemp.Add(i.ToString());
     }
 }
 
-Console.WriteLine("Hello, World!");
-Console.WriteLine(sb);
+Console.WriteLine("How to render foo bar");
+
+foreach(string s in numberTemp) {
+    Console.WriteLine(s);
+}
 
