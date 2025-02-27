@@ -2,10 +2,10 @@
 
 Action<Object> cw = Console.WriteLine;
 
-User user = new User("Jonh Doe", "John Username", "jhon@gmail.com");
-cw($"User name : {user.Name}");
-cw($"User username : {user.Username}");
-cw($"User gmail : {user.Email}");
+User user = new User();
+user.Email = "user@gmail.com";
+user.Name = "user real name";
+user.Username = "user username";
 
 
 Employee employee = new Employee();
@@ -27,6 +27,7 @@ manager.SetUsername("UserName Manager");
 manager.SetEmail("manager@gmail.com");
 manager.IsActive(true);
 manager.ViewData();
+
 
 
 

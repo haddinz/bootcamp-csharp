@@ -1,7 +1,7 @@
 class User {
-    public String Name {get; set; }
-    public String Username {get; set; }
-    public String Email {get; set; }
+    public string Name {get; set; }
+    public string Username {get; set; }
+    public string Email {get; set; }
 
     public User(){}
 }
