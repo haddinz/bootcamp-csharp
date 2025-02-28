@@ -8,6 +8,7 @@ This repository contains daily summaries during my participation in the C# bootc
 - **`Day-2/`** - Data types, operators, and control structures.
 - **`Day-3/`** - Classes, Objects, and Inheritance.
 - **`Day-4/`** - Interfaces, Generics, and WebResponse implementation.
+- **`Day-5/`** - C# Advanced.
 
 ## 🚀 Repository Goals
 - Systematically document the learning journey in C#.
