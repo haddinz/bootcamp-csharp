@@ -1,4 +1,3 @@
-# Assalamulaikum
 # Daily Summary of C# Bootcamp
 
 This repository contains daily summaries during my participation in the C# bootcamp. Each day, I document the topics covered, code examples, and challenges encountered while understanding C# concepts.
@@ -47,5 +46,4 @@ This project is licensed under the MIT License. Feel free to use and modify it a
   
 
 Happy Coding! 🚀
-# Waalaikumsalam
 
