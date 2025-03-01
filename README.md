@@ -1,3 +1,4 @@
+# Assalamulaikum
 # Daily Summary of C# Bootcamp
 
 This repository contains daily summaries during my participation in the C# bootcamp. Each day, I document the topics covered, code examples, and challenges encountered while understanding C# concepts.
@@ -23,11 +24,11 @@ This repository contains daily summaries during my participation in the C# bootc
 ## 📖 How to Use
 1. Clone this repository:
    ```bash
-   git clone https://github.com/username/csharp-bootcamp.git
+   git clone https://github.com/haddinz/bootcamp-csharp.git
    ```
 2. Navigate to the desired day's folder:
    ```bash
-   cd csharp-bootcamp/Day-4
+   cd bootcamp-csharp/Day-4
    ```
 3. Open the `.cs` file in an editor and run the program.
 
@@ -43,5 +44,8 @@ This project is licensed under the MIT License. Feel free to use and modify it a
 - This repository will be continuously updated as learning progresses.
 - Feel free to ask questions or share ideas in the issue section.
 
+  
+
 Happy Coding! 🚀
+# Waalaikumsalam
 
