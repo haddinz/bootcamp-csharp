@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day4", "Day4\Day4.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day5", "Day5\Day5.csproj", "{070036EF-EAE4-4DE1-A5A0-437CB76953B6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day6", "Day6\Day6.csproj", "{595D210B-A42C-4E98-B379-A210BCEFE10B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FizzBuzz2", "FizzBuzz2\FizzBuzz2.csproj", "{DF63ADCA-657A-47B0-9285-DA53148A0885}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,5 +60,13 @@ Global
 		{070036EF-EAE4-4DE1-A5A0-437CB76953B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{070036EF-EAE4-4DE1-A5A0-437CB76953B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{070036EF-EAE4-4DE1-A5A0-437CB76953B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{595D210B-A42C-4E98-B379-A210BCEFE10B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{595D210B-A42C-4E98-B379-A210BCEFE10B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{595D210B-A42C-4E98-B379-A210BCEFE10B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{595D210B-A42C-4E98-B379-A210BCEFE10B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF63ADCA-657A-47B0-9285-DA53148A0885}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF63ADCA-657A-47B0-9285-DA53148A0885}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF63ADCA-657A-47B0-9285-DA53148A0885}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF63ADCA-657A-47B0-9285-DA53148A0885}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
