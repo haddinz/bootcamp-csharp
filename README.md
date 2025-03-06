@@ -11,6 +11,7 @@ This repository contains daily summaries during my participation in the C# bootc
 - **`Day-5/`** - C# Advanced.
 - **`Day-6/`** - C# Advanced.
 - **`Day-7/`** - C# Framework Overview, Framwork Fundamental, Collection.
+- **`Day-8/`** - C# Personal Project.
 
 ## 🚀 Repository Goals
 - Systematically document the learning journey in C#.
