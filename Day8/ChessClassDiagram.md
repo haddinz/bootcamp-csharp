@@ -1,133 +1,133 @@
 ```mermaid
-classDiagram
 
-    class Person {
-        name: string
-        address: Address
-        email: string
-        phone: string
-    }
+    classDiagram
 
-    class GameStatus {
-        <<enumeration>>
-        Active
-        BlackWin
-        WhiteWin
-        Forfeit
-        Stalemate
-        Resignation
-    }
+        class Person {
+            namePlayer: string
+        }
 
-    class Move {
-        +Box StartBox
-        +Box EndingBox
-        +Piece PieceKilled
-        +Player Player
-        +bool IsCastlingMove
+        class GameStatus {
+            <<enum>>
+            Active
+            BlackWin
+            WhiteWin
+            Stalemate
+            Resignation
+        }
 
-        +void SetCastlingMove()
-    }
+        class PieceColor {
+            <<enum>>
+            White
+            Black
+        }
 
-    class Box {
-        +int X 
-        +int Y
+        class Move {
+            +Box StartBox
+            +Box EndingBox
+            +Piece PieceKilled
+            +Player Player
+            +bool IsCastlingMove
 
-        +int GetX
-        +int GetY
-    }
+            +void SetCastlingMove()
+        }
 
-    class Board {
-        +Box Boxs
+        class Box {
+            +int X 
+            +int Y
 
-        +list<Piece> GetPieces()
-        +void GetResetBoard()
-    }
+            +int GetX()
+            +int GetY()
+        }
 
-    class Piece {
-        +bool Killed
+        class Board {
+            +ArrayList<Box> Boxes
 
-        +bool IsWhite()
-        +bool IsKilled()
-        +bool CanMove()
-    }
+            +list<Piece> GetPieces()
+            +void GetResetBoard()
+        }
 
-    class King {
-        +bool CastlingDone
+        class Piece {
+            +bool Killed
+            +PieceColor PieceColor
 
-        +bool CanMove()
-    }
+            +bool IsKilled()
+            +bool CanMove()
+        }
 
-    class Queen {
-        +bool CanMove()
-    }
+        class King {
+            +bool CastlingDone
 
-    class Bishop {
-        +bool CanMove()
-    }
+            +bool CanMove()
+        }
 
-    class Knight {
-        +bool CanMove()
-    }
-    
-    class Rook {
-        +bool CanMove()
-    }
+        class Queen {
+            +bool CanMove()
+        }
 
-    class Pawn {
-        +bool CanMove()
-    }
+        class Bishop {
+            +bool CanMove()
+        }
 
+        class Knight {
+            +bool CanMove()
+        }
+        
+        class Rook {
+            +bool CanMove()
+        }
 
-    class Game {
-        +Action<List<Move>> OnMovesPlayedHistory
-        +List<Move> MovesPlayed
-        +Player CurrentTurn
-        +GameStatus Status
+        class Pawn {
+            +bool CanMove()
+        }
 
-        +bool IsOver()
-        +bool PlayerMove()
-        +bool MakeMove()
-    }
+        class Player {
+            +Person Person
+            +Piece Piece
 
-    class Player {
-        +Person Person
-        +int TotalGamesPlayed
-        +bool WhiteSide
+            +bool IsChecked()
+        }
 
-        +bool IsWhiteSide()
-        +bool IsChecked()
-    }
+        class GameController {
+            +Action<List<Move>> OnMovesPlayedHistory
+            +ArrayList<Player> CurrentTurn
+            +GameStatus Status
+            +List<Move> MovesPlayed
 
-    class GameController {
-        +bool ValidateMove()
-    }
+            +bool ValidateMove()
+            +bool IsOver()
+            +bool PlayerMove()
+            +bool MakeMove()
+            +void SetPlayerGameStatus()
+            +void StartGame()
+            +void EndGame()
+        }
 
-    class GameView {
-        +bool MakeMove()
-    }
+        class GameView {
 
-    GameController --> Game
-    GameController --> GameView
+            +bool DisplayMove()
+        }
 
-    Player --> Person
+        GameController --> Player
+        GameController --> GameView
+        GameController --> Board
+        GameController --> Move
 
-    Game --> Board
-    Game --> Move
-    Game --> Player
+        Player --> Person
+        Player --> Piece
 
-    Move --> Box
-    Move --> Piece
-    Move --> Player
+        Move --> Box
+        Move --> Piece
+        Move --> Player
 
-    Board --> Box
-    Board --> Piece
-    Box --> Piece
+        Board --> Box
+        Board --> Piece
+        Box --> Piece
 
-    Piece <|-- King
-    Piece <|-- Queen
-    Piece <|-- Bishop
-    Piece <|-- Knight
-    Piece <|-- Rook
-    Piece <|-- Pawn
-    
+        Piece <|-- King
+        Piece <|-- Queen
+        Piece <|-- Bishop
+        Piece <|-- Knight
+        Piece <|-- Rook
+        Piece <|-- Pawn
+
 ```

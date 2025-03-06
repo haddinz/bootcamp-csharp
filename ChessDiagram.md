@@ -1,153 +1,134 @@
 ```mermaid
-classDiagram
-    class Address {
-        streetAddress: string
-        city: string
-        state: string
-        zipcode: string
-        country: string
-    }
 
-    class Person {
-        name: string
-        address: Address
-        email: string
-        phone: string
-    }
+    classDiagram
 
-    class GameStatus {
-        <<enumeration>>
-        Active
-        BlackWin
-        WhiteWin
-        Forfeit
-        Stalemate
-        Resignation
-    }
+        class Person {
+            namePlayer: string
+        }
 
-    class AccountStatus {
-        <<enumeration>>
-        Active
-        Closed
-        Canceled
-        Blacklisted
-        None
-    }
+        class GameStatus {
+            <<enum>>
+            Active
+            BlackWin
+            WhiteWin
+            Stalemate
+            Resignation
+        }
 
-    class Move {
-        startBox: Box
-        endingBox: Box
-        pieceKilled: Piece
-        player: Player
-        isCastlingMove: bool
-        setCastlingMove(): void
-    }
+        class PlayerStatus {
+            <<enum>>
+            White
+            Black
+        }
 
-    class Box {
-        x: int
-        y: int
-        getX(): int
-        getY(): int
-    }
+        class Move {
+            +Box StartBox
+            +Box EndingBox
+            +Piece PieceKilled
+            +Player Player
+            +bool IsCastlingMove
 
-    class Board {
-        creationDate: date
-        getPieces(): list<Piece>
-        resetBoard(): void
-    }
+            +void SetCastlingMove()
+        }
 
-    class Piece {
-        killed: bool
-        isWhite(): bool
-        isKilled(): bool
-        canMove(): bool
-    }
+        class Box {
+            +int X 
+            +int Y
 
-    class King {
-        castlingDone: bool
-        canMove(): bool
-    }
+            +int GetX()
+            +int GetY()
+        }
 
-    class Queen {
-        canMove(): bool
-    }
+        class Board {
+            +ArrayList<Box> Boxes
 
-    class Knight {
-        canMove(): bool
-    }
+            +list<Piece> GetPieces()
+            +void GetResetBoard()
+        }
 
-    class Bishop {
-        canMove(): bool
-    }
+        class Piece {
+            +bool Killed
 
-    class Rook {
-        canMove(): bool
-    }
+            +bool IsWhite()
+            +bool IsKilled()
+            +bool CanMove()
+        }
 
-    class Pawn {
-        canMove(): bool
-    }
+        class King {
+            +bool CastlingDone
 
-    class Game {
-        movesPlayed: list<Move>
-        currentTurn: Player
-        status: GameStatus
-        isOver(): bool
-        playerMove(): bool
-        makeMove(): bool
-    }
+            +bool CanMove()
+        }
 
-    class Player {
-        person: Person
-        totalGamesPlayed: int
-        whiteSide: bool
-        isWhiteSide(): bool
-        isChecked(): bool
-    }
+        class Queen {
+            +bool CanMove()
+        }
 
-    class Account {
-        id: int
-        password: string
-        status: AccountStatus
-        resetPassword(): bool
-    }
+        class Bishop {
+            +bool CanMove()
+        }
 
-    class GameController {
-        validateMove(): bool
-    }
+        class Knight {
+            +bool CanMove()
+        }
+        
+        class Rook {
+            +bool CanMove()
+        }
 
-    class GameView {
-        makeMove(): bool
-    }
+        class Pawn {
+            +bool CanMove()
+        }
 
-    class Admin {
-        blockUser(): bool
-    }
+        class Player {
+            +Person Person
+            +PlayerStatus PlayerStatus
+            <!-- +bool WhiteSide -->
 
-    GameController --> Game
-    GameController --> GameView
-    GameView --> Game
-    Admin --|> Account
+            +bool IsWhiteSide()
+            +bool IsChecked()
+        }
 
-    Game --> Board
-    Game --> Player
-    Game --> Move
-    Player --> Person
-    Player --> Account
+        class GameController {
+            +Action<List<Move>> OnMovesPlayedHistory
+            +Player CurrentTurn
+            +GameStatus Status
+            +List<Move> MovesPlayed
 
-    Move --> Box
-    Move --> Piece
-    Move --> Player
+            +bool ValidateMove()
+            +bool IsOver()
+            +bool PlayerMove()
+            +bool MakeMove()
+            +void SetPlayerGameStatus()
+            +void StartGame()
+            +void EndGame()
+        }
 
-    Board --> Box
-    Board --> Piece
-    Box --> Piece
+        class GameView {
 
-    Piece <|-- King
-    Piece <|-- Queen
-    Piece <|-- Knight
-    Piece <|-- Bishop
-    Piece <|-- Rook
-    Piece <|-- Pawn
+            +bool DisplayMove()
+        }
+
+        GameController --> Player
+        GameController --> GameView
+        GameController --> Board
+        GameController --> Move
+
+        Player --> Person
+
+        Move --> Box
+        Move --> Piece
+        Move --> Player
+
+        Board --> Box
+        Board --> Piece
+        Box --> Piece
+
+        Piece <|-- King
+        Piece <|-- Queen
+        Piece <|-- Bishop
+        Piece <|-- Knight
+        Piece <|-- Rook
+        Piece <|-- Pawn
 
 ```
