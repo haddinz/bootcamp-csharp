@@ -1,5 +1,4 @@
 ```mermaid
-
     classDiagram
 
         class Person {
@@ -26,6 +25,7 @@
             +Box EndingBox
             +Piece PieceKilled
             +Player Player
+            +Piece PromotePiece
             +bool IsCastlingMove
 
             +void SetCastlingMove()
@@ -51,7 +51,7 @@
             +PieceColor PieceColor
 
             +bool IsKilled()
-            +bool CanMove()
+            +abstract bool CanMove()
         }
 
         class King {
@@ -82,14 +82,14 @@
 
         class Player {
             +Person Person
-            +Piece Piece
+            +List<Piece> Pieces
 
             +bool IsChecked()
         }
 
         class GameController {
             +Action<List<Move>> OnMovesPlayedHistory
-            +ArrayList<Player> CurrentTurn
+            +Player CurrentTurn
             +GameStatus Status
             +List<Move> MovesPlayed
 
@@ -103,7 +103,7 @@
         }
 
         class GameView {
-
+            +GameStatus ShowGameStatus()
             +bool DisplayMove()
         }
 
