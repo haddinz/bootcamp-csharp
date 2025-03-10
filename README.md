@@ -14,6 +14,7 @@ This repository contains daily summaries during my participation in the C# bootc
 - **`Day-8/`** - C# Personal Project.
 - **`Day-9/`** - C# Revision Day 8 / Personal Project.
 - **`Day-10/`** - C# Revision Day 8 / Personal Project.
+- **`Day-11/`** - C# Revision Day 8 v2 / Personal Project.
 
 ## 🚀 Repository Goals
 - Systematically document the learning journey in C#.

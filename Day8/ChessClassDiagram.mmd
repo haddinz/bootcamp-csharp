@@ -1,10 +1,6 @@
 ```mermaid
     classDiagram
 
-        class Person {
-            namePlayer: string
-        }
-
         class GameStatus {
             <<enum>>
             Active
@@ -20,15 +16,21 @@
             Black
         }
 
-        class Move {
-            +Box StartBox
-            +Box EndingBox
-            +Piece PieceKilled
-            +Player Player
-            +Piece PromotePiece
-            +bool IsCastlingMove
+        class IPlayer {
+            <<interface>>
+            +String PlayerName
+            +List<IPiece> Pieces
 
-            +void SetCastlingMove()
+            +bool IsChecked()
+        }
+
+        class IPiece {
+            <<interface>>
+            +bool Killed 
+            +PieceColor PieceColor
+
+            +bool IsKilled()
+            +bool CanMove()
         }
 
         class Box {
@@ -42,8 +44,7 @@
         class Board {
             +ArrayList<Box> Boxes
 
-            +list<Piece> GetPieces()
-            +void GetResetBoard()
+            +list<IPiece> GetPieces()
         }
 
         class Piece {
@@ -51,7 +52,7 @@
             +PieceColor PieceColor
 
             +bool IsKilled()
-            +abstract bool CanMove()
+            +bool CanMove()
         }
 
         class King {
@@ -77,51 +78,59 @@
         }
 
         class Pawn {
+            +bool EnPassant
+            +bool CanPromote
+
             +bool CanMove()
+            +void SetEnPassant()
+            +void SetCanPromote()
         }
 
         class Player {
-            +Person Person
-            +List<Piece> Pieces
+            +String PlayerName
+            +List<IPiece> Pieces
 
             +bool IsChecked()
         }
 
         class GameController {
-            +Action<List<Move>> OnMovesPlayedHistory
-            +Player CurrentTurn
+            +Action<List<IPlayer>> OnMovesPlayedHistory
+            +List<IPlayer> MovesPlayer
+            +Dictionary<IPlayer, List<IPiece>> PlayerPieceDictionary
             +GameStatus Status
-            +List<Move> MovesPlayed
-
+            +IPlayer CurrentTurn
+            +IPiece PieceKilled
+            +Box StartBox
+            +Box EndingBox
+            +bool IsCastlingMove
+            
             +bool ValidateMove()
             +bool IsOver()
             +bool PlayerMove()
             +bool MakeMove()
             +void SetPlayerGameStatus()
-            +void StartGame()
-            +void EndGame()
+            +void SwitchTurn()
+            +bool IsEnPassant()
+            +bool checkPromotion()
+            +void SetCastlingMove()
         }
 
-        class GameView {
-            +GameStatus ShowGameStatus()
+        class Display {
             +bool DisplayMove()
         }
 
-        GameController --> Player
-        GameController --> GameView
+        GameController --> Display
         GameController --> Board
-        GameController --> Move
+        GameController --> Box
+        GameController --> IPiece
+        GameController --> IPlayer
 
-        Player --> Person
-        Player --> Piece
-
-        Move --> Box
-        Move --> Piece
-        Move --> Player
+        Player --> IPlayer
 
         Board --> Box
         Board --> Piece
-        Box --> Piece
+
+        Piece --> IPiece
 
         Piece <|-- King
         Piece <|-- Queen
