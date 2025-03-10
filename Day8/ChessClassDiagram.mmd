@@ -41,12 +41,6 @@
             +int GetY()
         }
 
-        class Board {
-            +ArrayList<Box> Boxes
-
-            +list<IPiece> GetPieces()
-        }
-
         class Piece {
             +bool Killed
             +PieceColor PieceColor
@@ -93,25 +87,40 @@
             +bool IsChecked()
         }
 
+        class Board {
+            +Box[][] Boxes
+
+            +list<IPiece> GetPieces()
+            +IPiece GetPieceAt(Box position)
+        }
+
         class GameController {
-            +Action<List<IPlayer>> OnMovesPlayedHistory
-            +List<IPlayer> MovesPlayer
+            +Action<List<Move>> OnMovesPlayedHistory
+            +List<Move> MovesPlayer
             +Dictionary<IPlayer, List<IPiece>> PlayerPieceDictionary
             +GameStatus Status
             +IPlayer CurrentTurn
             +IPiece PieceKilled
-            +Box StartBox
-            +Box EndingBox
-            +bool IsCastlingMove
             
-            +bool ValidateMove()
+            +bool ValidateMove(Move move)
+            +bool MakeMove(Move move)
             +bool IsOver()
             +bool PlayerMove()
-            +bool MakeMove()
             +void SetPlayerGameStatus()
+            +bool CheckEnPassant(Move move)
+            +bool CheckPromotion(Move move)
             +void SwitchTurn()
-            +bool IsEnPassant()
-            +bool checkPromotion()
+        }
+
+        class Move {
+            +IPlayer Player
+            +IPiece Piece
+            +Box StartBox
+            +Box EndingBox
+            +bool IsCastling
+            +bool IsPromotion
+            +bool IsEnPassant
+
             +void SetCastlingMove()
         }
 
