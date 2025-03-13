@@ -88,7 +88,7 @@
         }
 
         class Board {
-            +Box[][] Boxes
+            +Box[ , ] Boxes
 
             +list<IPiece> GetPieces()
             +IPiece GetPieceAt(Box position)
@@ -112,7 +112,7 @@
             +void SwitchTurn()
         }
 
-        class Move {
+        class ValidatorMoving {
             +IPlayer Player
             +IPiece Piece
             +Box StartBox
@@ -133,6 +133,9 @@
         GameController --> Box
         GameController --> IPiece
         GameController --> IPlayer
+        GameController --> ValidatorMoving
+
+        ValidatorMoving --> Board
 
         Player --> IPlayer
 

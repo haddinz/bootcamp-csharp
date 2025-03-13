@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicTest", "LogicTest\LogicTest.csproj", "{E6C0AFF9-284A-4615-B821-92A238113120}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example", "Example\Example.csproj", "{76F88AFD-3E5C-45DD-9416-F024FB8E11B7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -86,5 +88,9 @@ Global
 		{E6C0AFF9-284A-4615-B821-92A238113120}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6C0AFF9-284A-4615-B821-92A238113120}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6C0AFF9-284A-4615-B821-92A238113120}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76F88AFD-3E5C-45DD-9416-F024FB8E11B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76F88AFD-3E5C-45DD-9416-F024FB8E11B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76F88AFD-3E5C-45DD-9416-F024FB8E11B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76F88AFD-3E5C-45DD-9416-F024FB8E11B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
