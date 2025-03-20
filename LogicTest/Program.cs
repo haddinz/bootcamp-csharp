@@ -7,9 +7,11 @@ class Program {
     static void Main() {
         // FooBar fooBar = new(20);
         
-        FooBarJazz fooBarJazz = new(105);
+        // FooBarJazz fooBarJazz = new(105);
 
-        FooBazBarJazzHuzz fooBazBarJazzHuzz = new(89);
+        // FooBazBarJazzHuzz fooBazBarJazzHuzz = new(89);
+
+        FinalLogicExercise finalLogicExercise = new(3, "fizzbuzz");
     }
 
 }
