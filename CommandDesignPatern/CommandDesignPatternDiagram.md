@@ -3,6 +3,7 @@ classDiagram
     class ICommand {
         <<interface>>
         + Execute() void
+        + Undo() void
     }
 
     class Light {
@@ -12,10 +13,12 @@ classDiagram
 
     class LightOn {
         + Execute() void
+        + Undo() void
     }
 
     class LightOff {
         + Execute() void
+        + Undo() void
     }
 
     class LightController {

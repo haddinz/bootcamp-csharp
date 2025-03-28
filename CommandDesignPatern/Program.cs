@@ -16,7 +16,6 @@ public class Program {
         lightControllerBefore.PressLightOn();
         lightControllerBefore.PressLightOff();
 
-
         //after implementation
         Light lightAfter = new Light();
 
