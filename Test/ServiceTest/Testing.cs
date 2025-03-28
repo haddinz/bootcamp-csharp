@@ -77,23 +77,39 @@ class Testing
 
     public void GetFollowAddress(Dictionary<string, string> address) {
         
-        foreach(KeyValuePair<string, string> keyValue in address) {
-            Console.WriteLine(keyValue.Key + keyValue.Value);
-        }
-
         List<string> addressList = new();
 
-        foreach(KeyValuePair<string, string> addressName in address) {
-            HashSet<string> origin = new HashSet<string>();
-            HashSet<string> destination = new HashSet<string>();
+        List<string> originSet = new();
+        List<string> destinationSet = new();
 
-            if(!origin.Contains(addressName.Key)) {origin.Add(addressName.Key);}
-            if(!destination.Contains(addressName.Value)) {destination.Add(addressName.Value);}
+        foreach(KeyValuePair<string, string> addressName in address) {
+            if(!originSet.Contains(addressName.Key)) {originSet.Add(addressName.Key);}
+            if(!destinationSet.Contains(addressName.Value)) {destinationSet.Add(addressName.Value);}
+        }
+
+        string origin = "";
+        string destination = "";
+
+        for(int i = 0; i < originSet.Count; i++) {
+            if(!originSet.Contains(destinationSet[i])){
+                destination = destinationSet[i];
+            }
+        }
+
+        for(int i = 0; i < destinationSet.Count; i++) {
+            if(!destinationSet.Contains(originSet[i])){
+                origin = originSet[i];
+            }
         }
 
         foreach(string s in addressList) {
             Console.WriteLine(s);
         }
         
+        Console.WriteLine(origin);
+        Console.WriteLine(destination);
     }
 }
+
+// just heap memory collected by GC
+// value type cant collected by GC
